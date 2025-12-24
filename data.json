@@ -10,5 +10,17 @@
     ],
     "createdAt": "2025-12-24T04:19:52.586Z",
     "updatedAt": "2025-12-24T04:19:52.586Z"
+  },
+  {
+    "id": 3,
+    "title": "Bobby",
+    "content": "BLoggy",
+    "category": "ufuny",
+    "tags": [
+      "Tech",
+      "Programming"
+    ],
+    "createdAt": "2025-12-24T06:52:28.831Z",
+    "updatedAt": "2025-12-24T06:52:28.831Z"
   }
 ]

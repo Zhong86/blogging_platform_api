@@ -86,8 +86,23 @@ router.get('/posts/:id', getBlogs, (req, res) => {
 
 router.get('/posts', getBlogs, (req, res) => {
   try {
-    console.log('get posts'); 
-    return res.status(200).json(res.blogs); 
+    const { term } = req.query; 
+    
+    if(!term)
+      return res.status(200).json(res.blogs); 
+    
+    //filtered based on term
+    const filteredPosts = res.blogs.filter(post => {
+      const searchTerm = term.toLowerCase();
+      return ( 
+        post.title?.toLowerCase().includes(searchTerm) 
+        || post.content?.toLowerCase().includes(searchTerm)
+        || post.category?.toLowerCase().includes(searchTerm)
+        || post.tags?.some(tag=> tag.toLowerCase().includes(searchTerm))
+      );
+    }); 
+
+    res.status(200).json(filteredPosts); 
   } catch (error) {
     res.status(500).json({message: error.message}); 
   }

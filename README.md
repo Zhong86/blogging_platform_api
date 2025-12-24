@@ -5,4 +5,4 @@
 [x] Delete an existing blog post <br>
 [x] Get a single blog post <br>
 [x] Get all blog posts <br>
-[] Filter blog posts by a search term <br>
+[x] Filter blog posts by a search term <br>
